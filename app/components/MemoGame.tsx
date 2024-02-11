@@ -23,16 +23,17 @@ import Image from "next/image";
     const [cards ,setCards]=useState<string[]>(generateDeck());
     const [flipped, setFlipped]= useState<number[]>([]);
     const [solved, setSolved]= useState<number[]>([]);
+
     useEffect(()=>{
         const checkForMatch = ()=>{
             
-            const [first,second]= flipped
-
+            const [first,second]= flipped;
             if(cards[first]===cards[second]){
                 setSolved([...solved,...flipped])
             }
             setFlipped([]);
         }
+
         if(flipped.length ===2){
             setTimeout(() => {
                 checkForMatch()
@@ -56,7 +57,7 @@ import Image from "next/image";
 
 return (
     <div className="text-center">
-        <h1>Meomory Game</h1>
+        <h1 className="text-2xl font-bold">Meomory Game</h1>
         {gameOver && (<h2>you Won!!</h2>)}
         <div className="grid grid-cols-4 gap-5 mt-6"> 
         {cards.map((card, index)=>(
@@ -74,6 +75,16 @@ return (
             </div>
         ))}
         </div>
-        <button onClick={resetGame} className="flex p-5 bg-slate-500 rounded-md">Restart Game</button>
+        <button onClick={resetGame} className="flex p-4 mt-4 bg-slate-500 rounded-md">Restart Game</button>
+
+        <div className="   mx-auto h-14 w-40 flex justify-center items-center">
+      <div className="i h-14 w-40 bg-pink-600 items-center rounded shadow-2xl cursor-pointer absolute overflow-hidden transform hover:scale-x-110 hover:scale-y-105 transition duration-300 ease-out">
+      </div>
+      <a className="text-center text-white font-semibold z-10 pointer-events-none">Restart Game</a>
+    </div>
+
+    <div>
+
+    </div>
     </div>
 )}

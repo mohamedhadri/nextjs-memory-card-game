@@ -1,12 +1,20 @@
+import BackGround from "./components/BackGround/BackGround";
+import Fireflies from "./components/Fireflies";
 import MemoGame from "./components/MemoGame";
 
 
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <>
   
+  <BackGround/>
+ 
+  <main className="flex  flex-col items-center justify-between p-24">
+  <Fireflies/>
   <MemoGame/>
     </main>
+    </>
+    
   );
 }

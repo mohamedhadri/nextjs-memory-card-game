@@ -3,6 +3,15 @@
 @tailwind utilities;
 
  body{
-    
-    background: linear-gradient(#5640e8, #340a94); 
+   overflow: hidden;
+    /* background: linear-gradient(#5640e8, #340a94);  */
  }
+
+ .firefly {
+   width: 2px;
+   height: 2px;
+   background: yellow;
+   border-radius: 50%;
+   box-shadow: 0 0 0 5px rgba(154, 205, 50, 0.4);
+   overflow: hidden;
+}

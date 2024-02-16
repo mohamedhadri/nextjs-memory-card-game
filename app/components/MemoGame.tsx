@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import Confetti from "./Confetti";
 
 
   const generateDeck = ()=>{
@@ -57,8 +58,12 @@ import Image from "next/image";
 
 return (
     <div className="text-center">
-        <h1 className="text-2xl font-bold">Meomory Game</h1>
-        {gameOver && (<h2>you Won!!</h2>)}
+        <h1 className="text-2xl font-bold text-[#f4f4f4]">Meomory Game</h1>
+        {gameOver && (<>
+            <h1 className="mt-3 text-3xl text-[#f4f4f4]">you Won!!</h1>
+            <Confetti/>
+        </>
+       )}
         <div className="grid grid-cols-4 gap-5 mt-6"> 
         {cards.map((card, index)=>(
 
@@ -75,12 +80,12 @@ return (
             </div>
         ))}
         </div>
-        <button onClick={resetGame} className="flex p-4 mt-4 bg-slate-500 rounded-md">Restart Game</button>
+        {/* <button onClick={resetGame} className="flex p-4 mt-4 bg-slate-500 rounded-md">Restart Game</button> */}
 
-        <div className="   mx-auto h-14 w-40 flex justify-center items-center">
-      <div className="i h-14 w-40 bg-pink-600 items-center rounded shadow-2xl cursor-pointer absolute overflow-hidden transform hover:scale-x-110 hover:scale-y-105 transition duration-300 ease-out">
+        <div onClick={resetGame} className="mt-4   mx-auto h-14 w-40 flex justify-center items-center">
+      <div className="i h-14 w-40 bg-[#A1BC9E] items-center rounded shadow-2xl cursor-pointer absolute overflow-hidden transform hover:scale-x-110 hover:scale-y-105 transition duration-300 ease-out">
       </div>
-      <a className="text-center text-white font-semibold z-10 pointer-events-none">Restart Game</a>
+      <a className="text-center text-white font-semibold  z-50 pointer-events-none ">Restart Game</a>
     </div>
 
     <div>
